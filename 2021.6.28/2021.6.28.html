@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>
+		body{margin: 0px;}
+		
+		#qj{width: 100%;
+			height: 1000px;
+			background-color: antiquewhite;}
+		
+		#tb{width: 100%;
+			height: 10%;}
+		
+		#ztl{width: 30%;
+			height: 40%;
+			margin:0 auto;
+			background-color:darkgray;
+			}
+		
+		#ztl ul li{width: 23%;
+					height: 40%;
+					text-align:center;
+					line-height: 40px; /*行高*/
+					float:left;}
+		
+		#ztl ul li:hover{background-color:#000000;
+						text-decoration: underline;/*下划线*/
+						cursor: pointer;/*鼠标放上面是手掌形状*/
+						}
+		
+		#ztl ul li a{text-decoration: none; /*没有修饰*/
+					color: black;}
+		
+		#ztl ul li:hover a{text-decoration: underline;
+							color:#FFFFFF;}
+		
+		#ul1{list-style: none;}
+		
+		.b{font-weight:bold;}
+		
+		#zb{width: 40%;
+			height: 80%;
+			float: left;
+			background-color: #A3E5FF;
+			background-repeat: no-repeat;
+			background-position: center;
+			}
+		
+		#yb{width: 60%;
+			height: 80%;
+			float: left;
+			background-color: #B6FFB4;}
+		
+		#db{width: 100%;
+			height: 10%;
+			clear: both;
+			border:solid;}
+		
+		#a1:link{color:indigo;}
+		#a2:link{color: indigo;}
+		#a2:hover{color: lime;}
+		#a2:active{color: peru;}
+		#a1:visited{color: crimson;}
+		input:focus{color: gold;}
+		
+		
+		#yb p{display: inline;}
+		#yb span{display: block;}
+	</style>
+</head>
+
+<body>
+	<div id="qj">
+	<div id="tb">
+		<div id="ztl">
+			<ul id="ul1">
+				<li class="b"><a href="#">新闻</a></li>
+				<li><a href="http://www.baidu.com" target="_blank">百度</a></li>
+				<li><a href="#">社会</a></li>
+				<li><a href="#">国际</a></li>
+			</ul>
+		</div>
+		</div>
+	<div id="zb"><a id="a1" href="http://www.jd.com">京东</a>
+				<a id="a2" href="http://www.taobao.com">淘宝</a>
+				name:<input name="name" type="text">
+		<br/>
+		<p>第一段文字</p>
+		<p>第二段文字</p>
+		<p>第三段文字</p>
+		</div>
+	<div id="yb">
+		<p>这是一个&lt;p&gt;标记--块元素</p>
+		
+		<i>这是一个行内元素</i>
+		<span>这是一个行内元素</span>
+		<div>这是一个div--块元素</div>
+		
+		</div>
+	<div id="db">底部</div>
+	</div>
+	
+</body>
+</html>
