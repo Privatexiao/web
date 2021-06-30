@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script language="javascript">
+		window.onload=function(){
+			function Student(name,age){
+				this.name = name;
+				this.age = age;
+				this.alertName = alertName;
+			}
+			function alertName(){
+				document.write("姓名:"+this.name)
+				document.write(",年龄:"+this.age+"<br/>");
+			}
+			var stu1=new Student("刘艺丹",20);
+			stu1.alertName();
+			var stu2=new Student("张三",25);
+			stu2.alertName();
+		}
+	</script>
+</head>
+
+<body>
+</body>
+</html>
