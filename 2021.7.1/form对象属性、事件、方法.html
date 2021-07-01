@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script language="javascript">
+		window.onload=function(){
+			var myBtn=document.getElementById("btn");
+			myBtn.onclick=function(){
+				newWin=window.open("","","height=300,width=350")
+				newWin.document.write("文档中共包含"+document.form1.length+"个元素，分别是：<p>");
+				newWin.document.write("<ul>")
+				for(i=0;i<document.form1.length;i++){
+					newWin.document.write("<li>"+document.form1.elements[i].name+"</li>");
+				}
+				newWin.document.write("<ul>")
+			}
+		}
+	
+	</script>
+</head>
+
+<body>
+	<form name="form1" action="file:///C:/Users/LEGION/Desktop/web/3.txt" >
+		文本框1：<input name="lbCurrent"><p>
+		文本框2：<input name="lbNext"><p>
+		<h3>单击按钮显示表单中的元素信息：</h3>
+		请你单击按钮<input type="button" id="btn" name="lyb" value="显示表单中的元素名称">
+	</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script language="javascript">
+		window.onload=function(){
+			myDisp=document.getElementById("disp");
+			myDisp.innerHTML="当前文档标题："+document.title+"<br/>";
+			myDisp.innerHTML+="当前文档的最后修改日期:"+document.lastModified+"<br/>";
+			myDisp.innerHTML+="当前文档中包含"+document.links.length+"个超级链接"+"<br/>";
+			myDisp.innerHTML+="当前文档中包含"+document.images.length+"个图像"+"<br/>";
+			myDisp.innerHTML+="当前文档中包含"+document.forms.length+"个表单"+"<br/>";
+		}
+	
+	</script>
+</head>
+
+<body>
+	<a href="http://www.whpu.edu.cn">超级链接1</a>
+	<a href="http://www.baidu.com">超级链接2</a>
+	<img src="file:///C:/Users/LEGION/Desktop/web/a.png" height="100" width="120" />
+	<img src="file:///C:/Users/LEGION/Desktop/web/b.png" height="100" width="120" />
+	<img src="file:///C:/Users/LEGION/Desktop/web/c.png" height="100" width="120" />
+	<form action="file:///C:/Users/LEGION/Desktop/web/3.txt">
+		<input type="text" id="username" />
+	</form>
+	<div id="disp"></div>
+</body>
+</html>

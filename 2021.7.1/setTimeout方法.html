@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script language="javascript">
+			window.onload=function(){
+				dispTime=document.getElementById("dispTime")
+				dispTime.value="hello";
+				interval1=1000;						//设定时间为一秒
+				function change(){
+					var today=new Date();								//获取当前时间
+					dispTime.innerHTML=two(today.getHours())+":"		//小时
+					dispTime.innerHTML+=two(today.getMinutes())+":"		//分钟
+					dispTime.innerHTML+=two(today.getSeconds());		//秒
+					timeID=window.setTimeout(change,interval1);			
+				}
+				function two(x){
+					return(x>=10?x:"0"+x);
+				}
+				change();
+			}
+	
+	</script>
+	<style>
+		#dispTime{
+			font-size: 50px;
+		}
+	</style>
+</head>
+
+<body>
+	<label id="dispTime"></label>
+</body>
+</html>
