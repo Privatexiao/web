@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script language="javascript">
+		window.onload=function(){
+			var ur1='http://www.baidu.com?a=1&b=2&c=3';
+			var reg=/([^?&=]+)=([^&=])*/;
+			var result=ur1.match(reg);
+			document.write(result+"<br/>");
+			document.write(result.index+"<br/>");
+			document.write(result.input+"<br/>");
+		}
+	</script>
+</head>
+
+<body>
+</body>
+</html>

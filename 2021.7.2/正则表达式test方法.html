@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title><br>
+	<script language="javascript">
+		window.onload=function(){
+			var myBtn=document.getElementById("btn");
+			myBtn.onclick=function(){
+				var objStr=document.getElementById("email").value;
+				var rgExp=/^\w+@(\w+[.])*\w+$/;
+				if(rgExp.test(objStr)){
+					alert("该email地址是合法的");
+				}else{
+					alert("该email地址是非合法的");
+				}
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<input type="text" id="email">
+	<input type="button" value="检查合法性" id="btn">
+</body>
+</html>

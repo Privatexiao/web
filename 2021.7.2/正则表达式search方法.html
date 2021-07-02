@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title><br>
+	<script language="javascript">
+		window.onload=function(){
+			var re=/(\d)(\d)\d\2\1/;
+			var ostr="253212328";
+			var pos=ostr.search(re);
+			if(pos==-1){
+				document.write("没有找到任何匹配");
+			}
+			else{
+				arr=ostr.match(re);
+				document.write("在位置"+pos+",找到第一个匹配，匹配内容为：");
+				document.write(arr[0]);
+			}
+		}
+	</script>
+</head>
+
+<body>
+</body>
+</html>
