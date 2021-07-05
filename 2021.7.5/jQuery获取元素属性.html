@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script src="jquery-3.6.0.js"></script>
+	<script>
+		$(document).ready(function(){
+			var index=0;
+			setInterval(imgChange,1000);
+			function imgChange(){
+				index=(index+1)%4;
+				$("#box img").attr("src",index+".jpg");
+			}
+		});
+	</script>
+</head>
+
+<body>
+	<div id="box">
+		<img src="1.jpg" width="600" height="450">
+	</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script src="jquery-3.6.0.js"></script>
+	<script>
+		$(document).ready(function(){
+			var colorArr=new Array("blue","red","pink","green");
+			$("li").each(function(index){
+				this.style.color=colorArr[index];
+			});
+		});
+	</script>
+</head>
+
+<body>
+		<ul>
+		<li>羽毛球</li>
+		<li>乒乓球</li>
+		<li>足球</li> 
+		<li>篮球</li>
+	</ul>
+</body>
+</html>
