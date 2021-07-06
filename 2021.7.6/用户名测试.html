@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="Description" content="this is my page">
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+<title>无标题文档</title>
+	<script language="javascript">
+		window.onload=function(){
+			var myUser=document.getElementById("username");
+			myUser.onblur=loadXMLDoc;
+			function loadXMLDoc(){
+				var xmlhttp;
+				if(window.XMLHttpRequest){
+					xmlhttp= new XMLHttpRequest();
+				}else{
+					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xmlhttp.onreadystatechange=function(){
+					if(xmlhttp.readyState==4){
+						if(xmlhttp.status==200){
+							var message=xmlhttp.responseText;
+							var flag=message.replace(/\s*/g,"");
+							var disp=document.getElementById("display")
+							if(flag=="true"){
+								disp.innerHTML="用户名被占用";
+								disp.style.color="white";
+								disp.style.background="red";
+							}else{
+								disp.innerHTML="用户名可用";
+								disp.style.color="white";
+								disp.style.background="green";
+							}
+						}
+					}
+				}
+				xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+				xmlhttp.open("POST","/hello/AjaxServlet",true);
+				xmlhttp.send("name="+myUser.value);
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<form action="" method="get">
+		<input type="text" id="username" name="username">
+		<span id="display"></span>
+		<input type="submit" value="测试">
+	</form>
+</body>
+</html>

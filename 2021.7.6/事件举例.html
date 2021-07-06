@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script src="jquery-3.6.0.js"></script>
+	<script>
+		$(function(){
+			$("#btn").click(function(){
+				$("#mydiv").mousedown(function(event){
+					var offset=$("#mydiv").offset();
+					x1=event.clientX-offset.left;
+					y1=event.clientY-offset.top;
+					$("#mydiv").mousemove(function(event){
+						$("#mydiv").css("left",(event.clientX-x1)+"px");
+						$("#mydiv").css("top",(event.clientY-y1)+"px");
+					});
+					$("#mydiv").mouseup(function(){
+						$("#mydiv").unbind("mousemove");
+					});
+				});
+			})
+		})
+	
+	</script>
+	<style>
+		#mydiv{
+			background: #00bfff;
+			position: absolute;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+
+<body>
+	<button id="btn">鼠标拖动</button>
+	<div id="mydiv"></div>
+</body>
+</html>

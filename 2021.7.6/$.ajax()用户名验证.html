@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script src="jquery-3.6.0.js"></script>
+	<script>
+		$(function(){
+			$("#username").blur(function(){
+				$.ajax({
+					url:"/hello/AjaxServlet",
+					dataType:"text",
+					data:{"name":$("#username").val()},
+					type:"post",
+					success:function(result){
+						if($.trim(result)=="true"){
+							$("#display").html("用户名被占用");
+							$("#display").css({color:"white",background:"red"});
+						}else{
+							$("#display").html("用户名可用");
+							$("#display").css({color:"green",background:"white"})
+						}
+					}
+				})
+			})
+		})
+	
+	</script>
+</head>
+
+<body>
+	<form action="" method="get">
+		用户名:
+		<input type="text" id="username" name="username">
+		<span id="display"></span><br/>
+		<input type="submit" value="test">
+	</form>
+</body>
+</html>

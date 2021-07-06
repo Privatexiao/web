@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script src="jquery-3.6.0.js"></script>
+	<script>
+		$(function(){
+			$("button").click(function(){
+				$.post("example9-5-server.jsp"),{
+					name:"web编程基础",
+					url:"http://www.whpu.edu.cn"
+				},
+					function(data,status){
+					$("#display").html("数据：<br/>"+data+"<br/>状态:<br/>&nbsp;&nbsp;&nbsp;"+status);
+				}
+			});
+		});
+	
+	</script>
+</head>
+
+<body>
+	<div id="display"></div>
+	<button>AjaxPOST请求</button>
+</body>
+</html>

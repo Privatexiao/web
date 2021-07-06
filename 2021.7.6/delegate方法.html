@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script src="jquery-3.6.0.js"></script>
+	<script>
+		$(document).ready(function(){
+			listArr=new Aray("音乐","排球","羽毛球","篮球","游泳");
+			index=0;
+			$("ul").delegate("li","click",function(){
+				$(this).append("<li>"+listArr[index]+"<li>")
+				index++;
+				index%=5;
+			})
+		});
+	
+	</script>
+</head>
+
+<body>
+	<ul>
+		<li>足球</li>
+	
+	</ul>
+</body>
+</html>

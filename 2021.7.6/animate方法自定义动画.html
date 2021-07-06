@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script src="jquery-3.6.0.js"></script>
+	<script>
+		$(function(){
+			$("#box").click(function(){
+				$(this).animate({left:"+=100px"},1000)
+					.animate({height:"+=20px"},1000)
+					.animate({opacity:"-=0.2"},1000,function(){
+					$(this).css("background","blue")
+				})
+					
+			})
+		})
+	</script>
+	<style>
+		#box{
+			position: relative;
+			width: 200px;
+			height: 200px;
+			background: red;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+	<div id="box"></div>
+	</div>
+</body>
+</html>
