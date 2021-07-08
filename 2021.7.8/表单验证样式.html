@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatilbe" content="IE-edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+	<script src="jquery-3.6.0.js" language="javascript"></script>
+	<link href="bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+<title>无标题文档</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="col-md-6 col-md-offset-3">
+			<form action="" method="get">
+				<div class="form-group has-feedback">
+					<label for="username">用户名</label>
+					<div class="input-group has-error">
+						<input id="username" class="form-control" placeholder="请输入用户名" maxlength="20" type="text">
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+					<span style="color: red">用户名不存在</span>
+				</div>
+				<div class="form-group has-feedback">
+					<label for="password">密码</label>
+					<div class="input-group has-feedback">
+						<input id="password" class="form-control" placeholder="请输入密码" maxlength="20" type="password">
+						<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+					</div>
+					<span style="color: red">密码不能为空</span>
+				</div>
+				<div class="form-group has-feedback">
+					<label for="passwordQ">确认密码</label>
+					<div class="input-group has-success">
+						<input id="passwordQ" class="form-control" placeholder="请再次输入密码" maxlength="20" type="password">
+						<span class="glyphicon glyphicon-arrow-right form-control-feedback"></span>
+					</div>
+					<span style="color: red">密码不一致</span>
+				</div>
+				<div class="row">
+					<div class="col-xs-7">
+						<div class="form-group has-feedback">
+							<label for="idcode-btn">验证码</label>
+							<div class="input-group has-warning">
+								<input id="idcode-btn" class="form-control" placeholder="请输入验证码" maxlength="4" type="text">
+								<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+					</div>	
+					<div class="col-xs-5" style="padding-top: 30px">
+					<div id="idcode" style="background: transparent;"></div>
+					</div>
+				</div>
+				<div class="form-group has-feedback">
+					<label for="phoneNum">手机号码</label>
+					<div class="input-group">
+						<input id="phoneNum" class="form-control" placeholder="请输入手机号" maxlength="11" type="text">
+						<span class="glyphicon glyphicon-remove-circle form-control-feedback"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-7">
+						<div class="form-group has-feedback">
+							<label for="idcode-btn">验证码</label>
+							<div class="input-group">
+								<input id="idcode-btn" class="form-control" placeholder="请输入验证码" maxlength="6" type="text">
+								<span class="glyphicon glyphicon-floppy-remove form-control-feedback"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4 text-center" style="padding-top: 26px">
+						<button type="button" id="loadingButton" class="btn btn-primary" autocomplete="off">获取短信验证码</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-offset-1 col-xs-5">
+						<input class="form-control btn btn-primary" id="submit" value="立&nbsp;&nbsp;即&nbsp;&nbsp;注&nbsp;&nbsp;册" type="submit">
+					</div>	
+					<div class="col-xs-5">
+						<input value="重置" id="reset" class="form-control btn btn-danger" type="reset">
+					</div>
+				</div>
+			</form>
+		</div>	
+	</div>
+</body>
+</html>
