@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatilbe" content="IE-edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<script src="jquery-3.6.0.js" language="javascript"></script>
+	<script src="bootstrap.min.js" language="javascript"></script>
+<title>无标题文档</title>
+	<script>
+		$(function(){
+			$(".nav-tabs li").click(function(){
+				$(".nav-tabs li").removeClass("active");
+				$(this).addClass("active");
+			});
+		})
+	</script>
+</head>
+
+<body>
+	<div class="container" style="padding: 30px 100px 10px;">
+		<nav>
+			<ul class="nav nav-tabs">
+				<li><a href="##">Home</a></li>
+				<li><a href="##">CSS</a></li>
+				<li><a href="##">Sass</a></li>
+				<li class="active"><a href="##">jQuery</a></li>
+				<li><a href="##">Responsive</a></li>
+			</ul><br/><br/>
+			
+			<ul class="nav nav-pills">
+				<li class="active"><a href="##">Home</a></li>
+				<li><a href="##">CSS</a></li>
+				<li class="disabled"><a href="##">Sass</a></li>
+				<li><a href="##">jQuery</a></li>
+				<li><a href="##">Responsive</a></li>
+			</ul>
+		</nav>
+	</div>
+</body>
+</html>
