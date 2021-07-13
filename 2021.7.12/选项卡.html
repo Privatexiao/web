@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<meta name="viewport" content="width=device-width,initial-scale">
+	<link href="bootstrap.min.css" rel="stylesheet">
+<script src="jquery-3.6.0.js" language="javascript"></script>
+<script src="bootstrap.min.js" language="javascript"></script>
+<title>无标题文档</title>
+	<script>
+		$(function(){
+			$(".#myTab li:eq(1) a").tab('show');
+		});
+	</script>
+</head>
+
+<body>
+	<div class="container"><br>
+		<ul id="myTab" class="nav nav-tabs">
+			<li class="active"><a href="#home" data-toggle="tab">Bootstrap</a></li>
+			<li><a href="#vue" data-toggle="tab">VUE</a></li>
+			<li class="dropdown">
+				<a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">前端<b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><a href="#jmeter" tabindex="-1" data-toggle="tab">HTML</a></li>	
+				<li><a href="#ejb" tabindex="-1" data-toggle="tab">CSS</a></li>
+			</ul>
+			</li>
+		</ul>
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade in active" id="home">
+				<p>
+				calc()函数用于动态计算长度值，任何长度值都可以使用calc()函数进行计算，需要注意的是，运算符前后都需要保留一个空格	
+				</p>
+			</div>
+			<div class="tab-pane fade" id="vue">
+				<p>
+				min()函数允许你从逗号分隔符表达式中选择一个最小值作为css的属性值
+				</p>
+			</div>
+			<div class="tab-pane fade" id="jmeter">
+				<p>
+				clamp() 函数的作用是把一个值限制在一个上限和下限之间，当这个值超过最小值和最大值的范围时，在最小值和最大值之间选择一个值使用。它接收三个参数：最小值、首选值、最大值clamp(MIN, VAL, MAX)，当首选值比最小值要小时，则使用最小值，当首选值介于最小值和最大值之间时，用首选值，当首选值比最大值要大时，则使用最大值，表达式中的每一个值都可以用不同的单位。
+				</p>
+			</div>
+			<div class="tab-pane" id="ejb">
+				<p>
+				gap属性是用来设置网格行与列之间的间隙，该属性是row-gap和column-gap的简写形式，适用于Flex，Grid和multi-column布局的元素
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

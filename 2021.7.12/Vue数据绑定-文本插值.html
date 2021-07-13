@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script src="vue.js"></script>
+</head>
+
+<body>
+	<div id="test">
+		<p>{{msg}}</p>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:'#test',
+			data:{
+				msg:new Date()
+			},
+			mounted:function(){
+				var vm =this;
+				this.timer = setInterval(function(){
+					vm.msg=new Date();
+				},1000);
+			},
+			beforeDestroy:function(){
+				if(this.timer){
+					clearInterval(this.timer);
+				}
+			}
+		});
+	
+	</script>
+</body>
+</html>

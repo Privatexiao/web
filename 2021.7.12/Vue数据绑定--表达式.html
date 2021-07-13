@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<script src="vue.js"></script>
+<title>无标题文档</title>
+</head>
+
+<body>
+	<div id="app">
+		<p>
+			{{str}}
+			{{num+'aaa'}}
+			{{str.length}}
+			{{str.split('ll').reverse().join('aa')}}
+		</p>
+		<p>
+			{{num}}
+			{{num+num1}}
+			{{num>num1}} 
+			{{num.toFixed(2)}}
+		</p>
+		<p>
+			{{flag}}
+		</p>
+		<p>
+			{{arr}}
+			{{arr[3]}}
+		</p>
+		<p>
+			{{obj}}
+			{{obj.name}}
+		</p>
+		<p>
+			{{num>num1 ? "是":"否"}}
+		</p>
+		<span v-html="link"></span>
+	</div>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				str:'Hello',
+				num:1,
+				num1:100,
+				flag:true,
+				arr:[1,2,3,4],
+				obj:{
+					name:'层层',
+					age:20
+				},
+				link:'<a href="http://www.baidu.com">百度</a>'
+			}
+		})
+	</script>
+</body>
+</html>
