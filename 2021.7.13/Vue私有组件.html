@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script src="vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<mycom></mycom>
+	</div>
+	<template id="temp">
+		<div>
+			<h3>私有组件</h3>
+		</div>
+	</template>
+	<script>
+		var vm = new Vue({
+			el:"#app",
+			components:{
+				mycom:{
+					template:'#temp',
+				}
+			}
+		})
+	</script>
+</body>
+</html>

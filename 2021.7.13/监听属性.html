@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script src="vue.js"></script>
+</head>
+
+<body>
+	<div id="computed_props">
+		数字:<input type="text" v-model="num">
+		字母:<input type="text" v-model="str">
+	</div>
+	<p id="info"></p>
+	<script>
+		var vm = new Vue({
+			el:"#computed_props",
+			data:{
+				num:0,
+				str:'A'
+			},
+			methods:{
+				
+			},
+			computed:{
+				
+			},
+			watch:{
+				num:function(val){
+					this.uum=val;
+					this.str=String.fromCharCode(65+parseInt(val%26));
+				},
+			}
+		});
+		vm.$watch('num',function(newValue,oldValue){
+			document.getElementById("info").innerHTML="修改前为："+oldValue+"修改后为："+newValue;
+		})
+	</script>
+</body>
+</html>
