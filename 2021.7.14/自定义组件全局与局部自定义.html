@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script src="vue.js"></script>
+	<style>
+		input:focus{
+			background-color: black;
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<p>页面载入时，第二个input元素自动获取焦点：</p>
+		<input><br/><br>
+		<input v-focus><br/><br/>
+		<input>
+	</div>
+	<!--<script>  //全局自定义
+		Vue.directive('focus',{
+			inserted:function(el){
+				el.focus()
+				el.value="获取焦点"
+			}
+		})
+		new Vue({
+			el:"#app"
+		})
+	</script>-->
+	
+	<script>  //局部自定义
+		new Vue({
+			el:"#app",
+			directives:{
+				focus:{
+					inserted:function(el){
+						el.focus()
+						el.value="获取焦点"
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

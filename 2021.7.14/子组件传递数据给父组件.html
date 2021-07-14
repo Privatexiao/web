@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script src="vue.js"></script>
+</head>
+
+<body>
+	<div id="test">
+		name数据：{{datamsgFromSon.name}}<br/>
+		age数据：{{datamsgFromSon.age}}<br/>
+		{{dataNumFromSon}}
+		<com2 v-on:func="show"></com2>
+	</div>
+	<template id="tmp">
+		<div>
+			<h3>这是子组件</h3>
+			<input type="button" value="子组件按钮，调用父组件show方法" @click="myclick">
+		</div>
+	</template>
+	<script>
+		var com2={
+			template:"#tmp",
+			data(){
+				return{
+					sonmsg:{
+						name:'1b',age:25
+					}
+				}
+			},
+			methods:{
+				myclick(){
+					this.$emit('func',123,this.sonmsg)
+				}
+			}
+		}
+		var vm = new Vue({
+			el:'#test',
+			data:{
+				datamsgFromSon:{name:'wq',age:18}
+			},
+			methods:{
+				show(data1,data2){
+					this.dataNumFromSon=data1
+					this.datamsgFromSon=data2
+				}
+			},
+			components:{
+				com2
+			}
+		})
+	</script>
+</body>
+</html>

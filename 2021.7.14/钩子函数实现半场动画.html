@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>
+		.ball{
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background-color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="test">
+		<input type="button" value="start" @click="flag=!flag">
+		<transition
+					@before-enter="beforeEnter"
+					@enter="enter"
+					@after-enter="afterEnter">
+			<div class="ball" v-show="flag"></div>
+		</transition>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		var vm = new Vue({
+			el:"#test",
+			data:{
+				flag:false
+			},
+			methods:{
+				beforeEnter(el){
+					el.style.transform="translate(50px,50px)"
+				},
+				enter(el,done){
+				el.offsetWidth
+				el.style.transform="translate(150px,150px)"
+				el.style.transition="all 1s ease"
+				done()
+			},
+			afterEnter(){
+				this.flag=false
+				}
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script src="vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<input type="radio" value="1" name="change" @click="flag=true" checked>1号
+		<input type="radio" value="2" name="change" @click="flag=false">2号
+		<my-com1 v-if="flag"></my-com1>
+		<my-com2 v-else="flag"></my-com2>
+	</div>
+	<template id="com1">
+		<p>{{title}}</p>
+	</template>
+	<template id="com2">
+		<p>{{title}}</p>
+	</template>
+	<script>
+			Vue.component('myCom1',{
+				template:"#com1",
+				data(){
+					return{
+						title:'子组件一号'
+					}
+				}
+				
+			})
+			Vue.component('myCom2',{
+				template:"#com2",
+				data(){
+					return{
+						title:'子组件二号'
+					}
+				}
+			})
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				flag:true
+			}
+		});
+	</script>
+</body>
+</html>
