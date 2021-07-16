@@ -1,0 +1,188 @@
+@charset "utf-8";
+/* CSS Document */
+/*导航栏上半部分*/
+body{
+	font-family: "微软雅黑";
+}
+.logoNavTop{
+	background: #11618A;
+	color: white;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+}
+.logoNavTop1{
+	background: #11618A;
+	color: white;
+	height: 25px;
+	line-height: 25px;
+	font-size: 8px;
+}
+.logoNavTop1 span{
+	margin-left: 15px;
+}
+@media screen and (max-width:992px){
+	.mytop{
+		margin-left: 0px;
+	}
+}
+@media screen and (min-width:992px){
+	.myTop{
+		margin-left: 80px;
+	}
+}
+.logoNavTop div a{
+	color: white;
+	margin: 0 5px;
+}
+.logNavTop .glyphicon{
+	margin: 0 5px;
+}
+/*导航下半部分*/
+
+/*.modal-backdrop {
+filter: alpha(opacity=0)!important;
+opacity: 0!important;
+}*/
+
+#myModal{
+	margin-top: 50px;
+}
+.navbar-brand{
+	height: 70px;
+}
+
+.navbar-header button{
+	margin-top:20px;
+}
+.navbar-brand img{
+	width: 200px;
+	position: relative;
+	top: 20px;
+}
+#myNav{
+	height: 70px;
+}
+.navbar-nav li a{
+	position: relative;
+	top: 7.5px;
+	font-weight: bold;
+	font-family:"微软雅黑";
+}
+#myNav li a{
+	height: 70px;
+	line-height: 40px;
+	font-size: 18px;
+}
+#myMenu li{
+	height: 40px;
+}
+#myMenu li a{
+	height: 40px;
+}
+
+/*轮播图*/
+@media screen and (min-width:800px){
+	#lb-carousel .item{
+		height: 410px;
+	}
+	#lb-carousel{
+		margin: 120px auto;
+		widows: 95%;
+	}
+}
+@media screen and (max-width:800px){
+	#lb-carousel{
+		margin: 170px auto;
+		width: 100%;
+	}
+}
+#lb-carousel .carousel-inner .item{			/*选中轮播图中的图片容器<div>*/
+	background: no-repeat center center;	/*背景图不重复、上下居中、左右居中*/
+	background-size: cover;					/*背景图片覆盖整个容器*/
+}
+
+/*学校新闻中的样式*/
+#mulNews{
+	margin-top: -80px;
+	padding: 0px 0;
+	width: 95%;
+}
+#mulNewsTop{
+	border-bottom: 1px solid #11618A;
+}
+#mulNewsTop .text-left{
+	margin-bottom: 10px;
+}
+#mulNewsTop .text-left a{
+	font-size: 20px;
+	margin-left: 20px;
+}
+#mulNewsTop .text-right a{
+	margin-right: 10px;
+}
+#mulNewsBottom{
+	margin-top: 30px;
+}
+#mulNewsBottom a{
+	color: #000000;
+	text-decoration: none;
+}
+#mulNewsBottom a:hover{
+	color: #0AB4F7;
+}
+.media-object{
+	width: 200px;
+	height: 120px;
+}
+.news2 .row{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid grey;
+	width: 100%;
+}
+
+/*版权部分*/
+#footer{
+	width: 100%;
+	padding: 5px;
+	height: 100%;
+	background-color: #11618A;
+	color: white;
+}
+#footer .footerLeft{
+	margin-left: 1px;
+}
+#footer .footerRight li{
+	font-size: 18px;
+	margin-right: 20px;
+	line-height: 80px;
+}
+#footer .footerRight img{
+	width: 50px;
+	height: 50px;
+	border-radius: 20%;
+}
+
+/*综合内容*/
+#mulNewsTop1{
+	border-bottom: 1px solid #11618A;
+	width: 100%;
+	align-content: center;
+}
+#mulNewsTop1 .text-left{
+	margin-bottom: 10px;
+}
+#mulNewsTop1 .text-left a{
+	font-size: 20px;
+	margin-left: 20px;
+}
+#mulNewsTop1 .text-left .mtxw{
+	font-size: 14px;
+}
+#mulNewsTop1 .text-right a{
+	margin-right: 10px;
+	font-size: 15px;
+	position: relative;
+	bottom: 34px;
+}

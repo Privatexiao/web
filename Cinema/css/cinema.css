@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+#app{
+	margin: 50px auto;
+}
+#app ul{
+	list-style: none;
+	width: 550px;
+}
+.seat{
+	float: left;
+	width: 30px;
+	height: 30px;
+	background-color: bisque;
+	margin: 5px 10px;
+	cursor:pointer;
+	list-style: none;
+}
+.seatActive{
+	background: url("../img/22.jpg") -13px -13px;
+}
+.seatSpace{
+	background: url("../img/11.jpg") -13px -13px;
+}
+.seatNouse{
+	background: url("../img/33.jpg") -13px -13px;
+}
+.seatNo{
+	background: url("../img/44.jpg") 0px 0px;
+}
+#app ul #screen{
+	text-align: center;
+	letter-spacing: 20px;/*字间距*/
+}
+.notice{
+	float: left;
+	height: 30px;
+	line-height: 40px;
+	margin-right: 60px;
+}
