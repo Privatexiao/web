@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一大堆外卖发红包正在来袭</title>
+    <script src="/jQuery/jquery-3.6.0.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="/css/Untitled-2.css" rel="stylesheet"> -->
+    <style>
+ *{
+    margin: 0;
+    padding: 0;
+}
+em{
+    font-style: normal;
+}
+.body_box{
+    min-width: 370px;
+    height: 100%;
+    background: -webkit-linear-gradient(-90deg,#f56332,#ba121f);
+}
+/* .body_box .body{
+    width: 100%;
+    height: auto;
+} */
+.backgood{
+    text-align: center;
+}
+/* .backgood p{
+    display: inline-block;
+    width: 120px;
+    height: 50px;
+    background-color: #f56332;
+    padding: 5px 10px;
+    border: 3px solid #fffdc7;
+    letter-spacing: 2px;
+    color: white;
+    font-weight: 700;
+    
+}
+.backgood img{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 10px;
+} */
+.backgood img{
+    display:inline-block;
+}
+.backgood .p1{
+    font-size: 45px;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 6px 8px rgba(0, 0, 0, 0.514);
+}
+/* 中间整体设置 */
+.backgood .body{
+    text-align: center;
+    display: inline-block;
+    width: 340px;
+    height: 544px;
+    margin: 20px 15px;
+    background-color: #ffe8c4;
+    border-radius: 15px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+}
+.backgood .body h2{
+    margin: 5px 0;
+    font-size: 23px;
+    background-image: -webkit-linear-gradient(90deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 6s infinite linear;
+}
+.backgood .body h2 em{
+    font-size: 29px;
+}
+/* 标签左半边背景 */
+.backgood .body .body_left{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 5px 0 0 5px;
+    border-right:3px dotted #f563327c;
+    float: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 标签右半边背景 */
+.backgood .body .body_right{
+    margin-bottom: 10px;
+    height: 70px;
+    width: 190px;
+    float: left;
+    border-radius: 0 5px 5px 0;
+    background-color: #fff;
+    /* border-left: 2px dotted #f56332; */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 小圆圈用用遮挡凹陷 */
+.backgood .body .yuan1{
+    position: absolute;
+    top: 41px;
+    left: 115px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ffe8c4;
+}
+.backgood .body .yuan2{
+    position: absolute;
+    top:112px;
+    left: 115px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ffe8c4;
+}
+.backgood .body .yuan3{
+    position: absolute;
+    top:121px;
+    left: 115px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ffe8c4;
+}
+.backgood .body .yuan4{
+    position: absolute;
+    top:191px;
+    left: 115px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ffe8c4;
+}
+.backgood .body .yuan5{
+    position: absolute;
+    top:201px;
+    left: 115px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ffe8c4;
+}
+.backgood .body .yuan6{
+    position: absolute;
+    top:270px;
+    left: 115px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ffe8c4;
+}
+
+
+
+/* 4元字体设置 */
+.backgood .body .body_left .p2>span{
+    font-size: 15px;
+    color: #f35626;
+}
+.backgood .body .body_left .p2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f35626;
+    margin-top: 6px;
+}
+.backgood .body .body_left>span{
+    display: block;
+    margin-top: -4px;
+    font-size: 10px;
+    color: rgb(185, 185, 185);
+}
+.backgood .body .body_right .p3{
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.backgood .body .body_right span{
+    margin-top: 5px;
+    margin-left: 10px;
+    float: left;
+    font-size: 13px;
+    color: rgb(185, 185, 185);
+}
+
+
+
+/* 底部整体样式 */
+.backgood .footer{
+    float: left;
+    position: absolute;
+    z-index: 4;
+    top: 340px;
+}
+.backgood .footer .p4{
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.backgood .footer .img1{
+    float: left;
+    width: 130px;
+    height: 130px;
+    margin: 5px 10px;
+    border:7px solid #ba121f;
+}
+.backgood .footer .img2{
+    margin: 15px 0;
+    float: left;
+    width: 170px;
+    height: 70px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.backgood .footer .img3{
+    float: left;
+    width: 170px;
+}
+.backgood .footer .img2 img{
+    float: left;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    border:1px solid #fff;
+    background-color: #fff;
+}
+.backgood .footer .img2 p,
+.backgood .footer .img3 p{
+    font-size: 17px;
+    color: white;
+}
+.backgood .footer .img2 span,
+.backgood .footer .img3 span{
+    font-size: 18px;
+    color: white;
+}
+.backgood .footer .img2 span em,
+.backgood .footer .img3 span em{
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+}
+/* 嘀嗒打车 */
+.backgood .footer .img3 img{
+    float: left;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    border:1px solid #ff7802;
+    background-color: #ff7802;
+}
+
+/* 红包 */
+.backgood .imgimg img{
+    width: 350px;
+    height: 270px;
+    position: absolute;
+    top: 275px;
+    left: -5px;
+    z-index: 1;
+}
+    </style>
+</head>
+<body>
+    <div class="body_box">
+        <div class="backgood">
+            <img src="img/美团外卖.png">
+            <p class="p1">外卖红包天天领</p>
+            <div class="body">
+                <h2>每天领取最高<em>56</em>元外卖红包</h2>
+                <div class="yuan1"></div>
+                <div class="yuan2"></div>
+                <div class="body_left">
+                    <p class="p2"><span>￥</span>4</p><span>满20可用</span>
+                </div>
+                <div class="body_right">
+                    <p class="p3">外卖天天神券【专享】</p><span>领取后尽快使用</span>
+                </div>
+            
+                <div class="yuan3"></div>
+                <div class="yuan4"></div>
+                <div class="body_left">
+                    <p class="p2"><span>￥</span>7</p><span>满35可用</span>
+                </div>
+                <div class="body_right">
+                    <p class="p3">美食红包【渠道专享】</p><span>领取后尽快使用</span>
+                </div>
+            
+
+                <div class="yuan5"></div>
+                <div class="yuan6"></div>
+                <div class="body_left">
+                    <p class="p2" style="margin-top: 11px;"><span>￥</span>56</p>
+                </div>
+                <div class="body_right">
+                    <p class="p3">超值联盟券【渠道专享】</p><span>领取后尽快使用</span>
+                </div>
+            
+            <div class="footer">
+                
+                <p class="p4">长按关注，天天领红包</p>
+                <img class="img1" src="img/二维码.jpg">
+                <div class="img2">
+                    <img src="img/电影票.jpg"><p>全国院线电影票</p><span>低至<em>3-9</em>折</span>
+                </div>
+                <div class="img3">
+                    <img src="img/嘀嗒.jpg"><p>再送嘀嗒打车</p><span>最高<em>5</em>折</span>
+                </div>
+            </div>
+            <div class="imgimg">
+                <img src="img/红包.jpg">
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
