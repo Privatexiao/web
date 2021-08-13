@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #outer{
+        width: 820px;
+        height: 333px;
+        margin: 100px auto;
+        background-color: yellow;
+        padding: 10px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    #outer img{
+        width: 800px;
+        height: 333px;
+    }
+    #imgList{
+        list-style: none;
+        position: absolute;
+        left: 0px;
+    }
+    #imgList li{
+        float: left;
+        margin: 0 10px;
+    }
+    #navDiv{
+        position: absolute;
+        top: 315px;
+
+    }
+    #navDiv a{
+        width: 15px;
+        height: 15px;
+        float: left;
+        background-color: red;
+        margin: 0 5px;
+        /* 透明度 */
+        opacity: 0.5;
+        /* 兼容IE8 */
+        filter: alpha(opacity=50);
+    }
+    #navDiv a:hover{
+        background-color: black;
+    }
+</style>
+<script src="tools.js" type="text/javascript"></script>
+<script type="text/javascript">
+    window.onload = function(){
+        
+        let imgList = document.getElementById("imgList");
+        let imgArr = document.getElementsByTagName("img");
+        // 设置ul的整体宽度
+        imgList.style.width = 820*imgArr.length+"px";
+        // 设置导航按钮居中
+        let navDiv = document.getElementById("navDiv");
+        let outer = document.getElementById("outer");
+        navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth)/2 + "px";
+
+        // 默认显示图片的索引
+        let index =0;
+        // 获取所有a
+        let allA = document.getElementsByTagName("a");
+        // 设置默认选中效果
+        allA[index].style.backgroundColor = "black";
+
+        // 点击超链接切换图片
+        for(let i=0;i<allA.length;i++){
+            // 为每个超链接都添加一个num属性
+            allA[i].num = i;
+
+            allA[i].onclick = function(){
+                //关闭自动切换的定时器
+                clearInterval(timer);
+                // 获取点击超链接的索引，并设置为index
+                index = this.num;
+                // 切换图片
+                //imgList.style.left = -820*index+"px";
+                
+                setA();
+                // 调用自定义的函数切换动画
+                move(imgList, "left" , -820*index , 20 , function(){
+                    // 重新开启自动切换图片
+                    autoChange();
+                });
+            };
+        }
+
+        // 自动切换图片
+        autoChange();
+
+        // 创建一个方法来设置选中的a
+        function setA(){
+            // 判定当前索引是否是最后一张图片
+            if(index >= imgArr.length -1){
+                index =0;
+
+                // 通过css将最后一张图片换成第一张
+                imgList.style.left = 0;
+            }
+            
+            for(let i=0;i<allA.length;i++){
+                allA[i].style.backgroundColor = "";
+            }
+
+            allA[index].style.backgroundColor = "black";
+        };
+        
+        // 定义一个自动切换的标识
+        var timer;
+        // 创建一个函数来开启自动切换图片
+        function autoChange(){
+
+            
+            // 开启一个定时器
+            timer = setInterval(function(){
+                // 索引自增
+                index++;
+                // 判定index的值
+                index %= imgArr.length;
+                
+                move(imgList, "left" , -820*index , 20 , function(){
+                    setA();
+                });
+            },3000);
+        };
+    };
+</script>
+<body>
+    <div id="outer">
+        <ul id="imgList">
+            <li>
+                <img src="img/a.jpg">
+            </li>
+            <li>
+                <img src="img/b.jpg">
+            </li>
+            <li>
+                <img src="img/c.jpg">
+            </li>
+            <li>
+                <img src="img/d.jpg">
+            </li>
+            <li>
+                <img src="img/e.jpg">
+            </li>
+            <li>
+                <img src="img/a.jpg">
+            </li>
+        </ul>
+        <div id="navDiv">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+</body>
+</html>

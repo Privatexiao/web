@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            position: absolute;
+        }
+        #box2{
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            let box1 = document.getElementById("box1");
+            
+            drag(box1);
+
+            drag(box2);
+            
+            //提取一个专门用来拖拽的函数
+            function drag(obj){
+                obj.onmousedown = function(event){
+
+                    event = event || window.event;
+
+                        let ol = event.clientX - obj.offsetLeft;
+                        let ot = event.clientY - obj.offsetTop;
+
+
+
+                            document.onmousemove = function(event){
+                                event = event || window.event;
+
+                                let left = event.clientX-ol;
+                                let top = event.clientY-ot;
+
+                                obj.style.left = left + "px";
+                                obj.style.top = top +"px";
+                            };
+                            document.onmouseup = function(){
+                                document.onmousemove = null;
+                                document.onmouseup = null;
+                            };
+                            //取消默认行为
+                            return false;
+                            };
+                    };
+            // box1.onmousedown = function(event){
+
+            //     event = event || window.event;
+
+            //     let ol = event.clientX - box1.offsetLeft;
+            //     let ot = event.clientY - box1.offsetTop;
+
+
+
+            //     document.onmousemove = function(event){
+            //         event = event || window.event;
+
+            //         let left = event.clientX-ol;
+            //         let top = event.clientY-ot;
+
+            //         box1.style.left = left + "px";
+            //         box1.style.top = top +"px";
+            //     };
+            //     document.onmouseup = function(){
+            //         document.onmousemove = null;
+            //         document.onmouseup = null;
+            //     };
+            //     //取消默认行为
+            //     return false;
+            // };
+        };
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>

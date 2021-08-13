@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position:absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            let box1 = document.getElementById("box1");
+            document.onmousemove = function(event){
+                // event = event || window.event;
+
+                let st = document.body.scrollToP || document.documentElement.scrollTop;
+                let sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+                let left = event.clientX;
+                let top = event.clientY;
+
+                // let left = event.pageX;
+                // let top = event.pageY;
+
+                box1.style.left=left+sl+"px";
+                box1.style.top=top+st+"px";
+            };
+        };
+    </script>
+</head>
+<body style="height: 1000px; width: 2000px;">
+    <div id="box1"></div>
+</body>
+</html>

@@ -36,9 +36,9 @@ a{
     left: 15px;
 }
 .right_xfshow li .right_img_img{
-   position: relative;
-   left: -19.9px;
-   opacity: 0;
+    position: relative;
+    left: -19.9px;
+    opacity: 0;
 }
 .right_xfshow li p{
     color: rgb(117, 117, 117);
@@ -245,7 +245,9 @@ li:hover>.app .qrc{
 .right_ssk button{
     border: 1px solid rgb(189, 189, 189);
     border-left: none;
-    
+}
+.right_ssk .ssk_btn{
+    float: left;
 }
 .right_ssk img{
     display: block;
@@ -340,10 +342,10 @@ li:hover>.app .qrc{
     cursor: pointer;
 }
 .CaiDan_left li a{
-   color: rgb(255, 255, 255);
-   float: left;
-   margin-left: 35px;
-   font-size: 17px;
+    color: rgb(255, 255, 255);
+    float: left;
+    margin-left: 35px;
+    font-size: 17px;
 }
 .CaiDan_left strong{
     margin-left: 80px;
@@ -437,6 +439,9 @@ li:hover>.app .qrc{
     top: 158px;
     font-size: 50px;
     color: rgb(211, 211, 211);
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
 }
 .CaiDan_right .next{
     position: absolute;
@@ -445,6 +450,9 @@ li:hover>.app .qrc{
     font-size: 50px;
     color: rgb(211, 211, 211);
     float: right;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
 } 
 
 
